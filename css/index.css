@@ -4,3 +4,43 @@
     height: 100px;
     overflow-y: scroll;
 }
+.knob {
+    clear:both;
+}
+.knob .include{
+    float:left;
+    margin: 7px 10px 0 0;
+}
+.knob .track {
+    float:left;
+    background-color:#AAA;
+    width:350px;
+    height:15px;
+    padding:7px;
+}
+.knob .track .label {
+    float:left;
+    width:100px;
+}
+.knob .track input {
+    float:left;
+    margin: 0 5px;
+}
+.knob .track .track-percent{
+    width: 5px;
+    height: 10px;
+    margin-top:2px;
+    border:1px solid #666;
+    float:left;
+    margin-left: 1px;
+    background-color: #FFF;
+}
+.knob .track .track-percent.min.on{
+    background-color: #F00;
+}
+.knob .track .track-percent.mid.on{
+    background-color: #FF0;
+}
+.knob .track .track-percent.max.on{
+    background-color: #0F0;
+}

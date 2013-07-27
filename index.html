@@ -6,71 +6,21 @@
     </head>
 
     <body>
-        Name: <input type="text" id="artist-name" /><br/><br/>
+        <div style="display:none;">
+            Name: <input type="text" id="artist-name" /><br/><br/>
 
-        Id:<br/>
-        <div id="id-list">
+            Id:<br/>
+            <div id="id-list">
 
-        </div>
-        <br/><br/>
-
-
-        <input type="button" id="biographies" value="Biographies" /><br/>
-        <input type="button" id="images" value="Images" /><br/>
-        <br/><br/>
-
-        <div id="interface">
-            <div class="knob" data-attribute="loudness">
-                <span id="loudness-include">X</span>
-                <span class="label">Loudness</span>
-                <input type="text" id="loudness" value="" />
-                <input type="button" value="-" id="loudness-down" />
-                <input type="button" value="+" id="loudness-up" />
             </div>
+            <br/><br/>
 
-            <div class="knob" data-attribute="danceability">
-                <span id="danceability-include">X</span>
-                <span class="label">Danceability</span>
-                <input type="text" id="danceability" value="500" />
-                <input type="button" value="-" id="danceability-down" />
-                <input type="button" value="+" id="danceability-up" />
-            </div>
 
-            <div class="knob" data-attribute="energy">
-                <span id="energy-include">X</span>
-                <span class="label">Energy</span>
-                <input type="text" id="energy" value="" />
-                <input type="button" value="-" id="energy-down" />
-                <input type="button" value="+" id="energy-up" />
-            </div>
-
-            <div class="knob" data-attribute="liveness">
-                <span id="liveness-include">X</span>
-                <span class="label">Liveness</span>
-                <input type="text" id="liveness" value="" />
-                <input type="button" value="-" id="liveness-down" />
-                <input type="button" value="+" id="liveness-up" />
-            </div>
-
-            <div class="knob" data-attribute="speechiness">
-                <span id="speechiness-include">X</span>
-                <span class="label">Speechiness</span>
-                <input type="text" id="speechiness" value="" />
-                <input type="button" value="-" id="speechiness-down" />
-                <input type="button" value="+" id="speechiness-up" />
-            </div>
-
-            <div class="knob" data-attribute="acousticness">
-                <span id="acousticness-include">X</span>
-                <span class="label">Acousticness</span>
-                <input type="text" id="acousticness" value="" />
-                <input type="button" value="-" id="acousticness-down" />
-                <input type="button" value="+" id="acousticness-up" />
-            </div>
+            <input type="button" id="biographies" value="Biographies" /><br/>
+            <input type="button" id="images" value="Images" /><br/>
+            <br/><br/>
         </div>
 
-        <input type="button" id="rdio-start" value="Start" /><br/>
-        <br/><br/>
 
         <div id="output">
 
@@ -78,6 +28,229 @@
         <div id="rdio-output">
 
         </div>
+
+        <div id="interface">
+            <div class="knob" data-attribute="loudness">
+                <span id="loudness-include" class="include">X</span>
+                <input type="hidden" id="weee" value="" />
+
+                <div class="track">
+                    <span class="label">Loudness</span>
+                    <input type="button" value="-" id="loudness-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="loudness-up" />
+                </div>
+            </div>
+
+            <div class="knob" data-attribute="danceability">
+                <span id="danceability-include" class="include">X</span>
+                <input type="hidden" id="danceability" value="" />
+
+                <div class="track">
+                    <span class="label">Danceability</span>
+                    <input type="button" value="-" id="danceability-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="danceability-up" />
+                </div>
+            </div>
+
+            <div class="knob" data-attribute="energy">
+                <span id="energy-include" class="include">X</span>
+                <input type="hidden" id="energy" value="" />
+
+                <div class="track">
+                    <span class="label">Energy</span>
+                    <input type="button" value="-" id="energy-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="energy-up" />
+                </div>
+            </div>
+
+            <div class="knob" data-attribute="liveness">
+                <span id="liveness-include" class="include">X</span>
+                <input type="hidden" id="liveness" value="" />
+
+                <div class="track">
+                    <span class="label">Liveness</span>
+                    <input type="button" value="-" id="liveness-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="liveness-up" />
+                </div>
+            </div>
+
+            <div class="knob" data-attribute="speechiness">
+                <span id="speechiness-include" class="include">X</span>
+                <input type="hidden" id="speechiness" value="" />
+
+                <div class="track">
+                    <span class="label">Speechiness</span>
+                    <input type="button" value="-" id="speechiness-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="speechiness-up" />
+                </div>
+            </div>
+
+            <div class="knob" data-attribute="acousticness">
+                <span id="acousticness-include" class="include">X</span>
+                <input type="hidden" id="acousticness" value="" />
+
+                <div class="track">
+                    <span class="label">Acousticness</span>
+                    <input type="button" value="-" id="acousticness-down" />
+
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+                    <div class="track-percent min"></div>
+
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+                    <div class="track-percent mid"></div>
+
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+                    <div class="track-percent max"></div>
+
+                    <input type="button" value="+" id="acousticness-up" />
+                </div>
+            </div>
+        </div>
+        <br/><br/>
+        <br/><br/>
+
+        <input type="button" id="rdio-start" value="Start" /><br/>
+        <br/><br/>
 
         <!--<div id="rdio-swf">-->
             <!--<div>-->
