@@ -23,13 +23,12 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         this.on = false;
         this.search_data = {};
         this.search_sort = "";
-        this.setSearch("loudness", null, 200);
+        this.setSearch("loudness", null, 100, -100);
         this.setSearch("danceability", null, 1000);
         this.setSearch("energy", null, 1000);
         this.setSearch("liveness", null, 1000);
         this.setSearch("speechiness", null, 1000);
         this.setSearch("acousticness", null, 1000);
-
 
         var _this = this;
         $("#rdio-start").on("click", function() {
@@ -52,23 +51,25 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
             $("#output").html("ERROR<br/>" + JSON.stringify(data));
         },
 
-        setSearch: function(music_attr, music_value, max_value) {
-            this.search_sort = music_attr
+        setSearch: function(music_attr, music_value, max_value, min_value) {
             if (!music_value) {
                 this.search_data["min_" + music_attr] = null;
                 this.search_data["max_" + music_attr] = null;
             } else {
                 var min = (music_value - (max_value / this.scale));
-                if (min < 0) { min = 0;}
+                if (min < min_value) { min = min_value;}
+
                 var max = (music_value + (max_value / this.scale));
                 if (max > max_value) { max = max_value;}
 
-                this.search_data["min_" + music_attr] = min / max_value;
-                this.search_data["max_" + music_attr] = max / max_value;
+                if (music_attr == "loudness") {
+                    this.search_data["min_" + music_attr] = min;
+                    this.search_data["max_" + music_attr] = max;
+                } else {
+                    this.search_data["min_" + music_attr] = min / max_value;
+                    this.search_data["max_" + music_attr] = max / max_value;
+                }
             }
-
-            console.debug(this.search_data);
-//            console.debug(JSON.stringify(this.search_data));
         },
 
         getSearchData: function() {
@@ -100,7 +101,8 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
         searchResults: function(data) {
             if (data.response && data.response.songs.length) {
-                this.play(data.response.songs[0]);
+                //pick a random song
+                this.play(data.response.songs[Math.floor((Math.random()*data.response.songs.length))]);
             } else {
                 $("#output").html("NO MATCH");
             }
@@ -128,7 +130,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         },
 
         setSongData: function(data) {
-            knobs["loudness"].setValue(data.response.songs[0].audio_summary.loudness * 1000);
+            knobs["loudness"].setValue(data.response.songs[0].audio_summary.loudness + 100);
             knobs["danceability"].setValue(data.response.songs[0].audio_summary.danceability * 1000);
             knobs["energy"].setValue(data.response.songs[0].audio_summary.energy * 1000);
             knobs["liveness"].setValue(data.response.songs[0].audio_summary.liveness * 1000);
@@ -159,50 +161,6 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
             $("#id-list").html(suggestion_html);
         },
 
-        biographies: function() {
-            if (this.artist_id) {
-                $.ajax({
-                    url: "http://developer.echonest.com/api/v4/artist/biographies",
-                    data: {
-                        api_key: "YXXK8FOBOLXWV5PWF",
-                        format: "json",
-                        id: this.artist_id
-                    },
-                    success: $.proxy(this.outputSuccess, this),
-                    error: $.proxy(this.outputError, this)
-                });
-            } else {
-                console.debug("Click an Artist first");
-            }
-        },
-
-        images: function() {
-            if (this.artist_id) {
-                $.ajax({
-                    url: "http://developer.echonest.com/api/v4/artist/images",
-                    data: {
-                        api_key: "YXXK8FOBOLXWV5PWF",
-                        format: "json",
-                        id: this.artist_id
-                    },
-                    success: $.proxy(this.showImages, this),
-                    error: $.proxy(this.outputError, this)
-                });
-            } else {
-                console.debug("Click an Artist first");
-            }
-        },
-
-        showImages: function(data) {
-            var image_html = "";
-            _.each(data.response.images, function(image) {
-                image_html += image.license.attribution +"<br/>";
-                image_html += "<img src='" + image.url + "'/><br/><br/>";
-            });
-
-            $("#output").html(image_html);
-        },
-
         songs: function() {
             if (this.artist_id) {
                 $.ajax({
@@ -219,19 +177,6 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
             } else {
                 console.debug("Click an Artist first");
             }
-        },
-
-        getTrack: function(track_id) {
-//            $.ajax({
-//                url: "http://developer.echonest.com/api/v4/song/profile",
-//                data: {
-//                    api_key: "YXXK8FOBOLXWV5PWF",
-//                    format: "json",
-//                    id: track_id
-//                },
-//                success: $.proxy(this.outputSuccess, this),
-//                error: $.proxy(this.outputError, this)
-//            });
         },
 
         showSongs: function(data) {

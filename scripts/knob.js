@@ -2,14 +2,16 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
     var Knob = function(echonest, dom_element, attr) {
         this.scale = 50;
         this.max = 1000;
+        this.subtract = 0;
 
-//        if (attr == "loudness") {
-//            this.max = 200;
-//        }
+        if (attr == "loudness") {
+            this.max = 200;
+            this.subtract = 100;
+        }
 
         this.music_value = 0;
 
-        this.include = false;
+        this.include = true;
         this.echonest = echonest;
         this.dom_element = dom_element;
         this.music_attr = attr;
@@ -26,15 +28,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
             var _this = this;
             this.knob_value.val("");
-            //this.music_value = parseInt(this.knob_value.val(), 10);
-//            this.knob_value.on("change", function() {
-//                if ($(this).val() != "") {
-//                    _this.music_value = parseInt($(this).val(), 10);
-//                } else {
-//                    _this.music_value = 0;
-//                }
-//                _this.update();
-//            });
+
             this.knob_include.on("click", function() {
                 _this.include = !_this.include;
                 if (_this.include) {
@@ -49,7 +43,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
                 _this.update();
             });
             this.knob_up.on("click", function() {
-                _this.music_value = _this.music_value + (_this.max / _this.scale);
+                _this.music_value = _this.music_value + (_this.max/ _this.scale);
                 _this.update();
             });
             this.knob_track.on("click", ".track-percent", function() {
@@ -77,7 +71,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
                 }
             });
 
-            this.echonest.setSearch(this.music_attr, (this.include) ? this.music_value : null, this.max);
+            this.echonest.setSearch(this.music_attr, (this.include) ? this.music_value - this.subtract : null, this.max - this.subtract, 0 - this.subtract);
             if (this.include || force) {
                 this.echonest.search();
             }

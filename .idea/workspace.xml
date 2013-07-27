@@ -11,8 +11,8 @@
     <file path="/a.dummy" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374632148362" ignored="false" />
     <file path="/app.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374957429205" ignored="false" />
     <file path="/rdio.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374945050979" ignored="false" />
-    <file path="/echonest.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374958923229" ignored="false" />
-    <file path="/knob.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374958940148" ignored="false" />
+    <file path="/echonest.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374960410233" ignored="false" />
+    <file path="/knob.js" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374960254538" ignored="false" />
     <file path="/index.css" changelist="9fded0ad-0e96-43ac-9a0c-6bfd6d77c57a" time="1374956888737" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
     <favorites_list name="Echonest" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.28550932">
+    <splitter split-orientation="horizontal" split-proportion="0.5416069">
       <split-first>
         <leaf>
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
@@ -71,19 +71,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="echonest.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="echonest.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scripts/echonest.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="17" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.6511628">
+                <state line="13" column="11" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="47" selection-start="453" selection-end="453" vertical-scroll-proportion="-10.88">
+                <state line="35" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.7075606">
                   <folding />
                 </state>
               </provider>
@@ -105,7 +105,7 @@
           <file leaf-file-name="knob.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/knob.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="47" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.37465563">
+                <state line="9" column="9" selection-start="295" selection-end="295" vertical-scroll-proportion="-0.75035065">
                   <folding />
                 </state>
               </provider>
@@ -123,7 +123,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="362" column="58" selection-start="17742" selection-end="17754" vertical-scroll-proportion="19.84">
+                <state line="15" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="-3.1578948">
                   <folding />
                 </state>
               </provider>
@@ -152,11 +152,11 @@
         <option value="$PROJECT_DIR$/scripts/lib/rdio.min.js" />
         <option value="$PROJECT_DIR$/scripts/rdioapi.js" />
         <option value="$PROJECT_DIR$/scripts/lib/rdio.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/scripts/app.js" />
-        <option value="$PROJECT_DIR$/scripts/echonest.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/knob.js" />
+        <option value="$PROJECT_DIR$/scripts/echonest.js" />
       </list>
     </option>
   </component>
@@ -403,13 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="52" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
@@ -417,23 +410,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="47" selection-start="453" selection-end="453" vertical-scroll-proportion="-10.88">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/knob.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="47" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.37465563">
+        <state line="9" column="9" selection-start="295" selection-end="295" vertical-scroll-proportion="-0.75035065">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/echonest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="17" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.6511628">
+        <state line="13" column="11" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="1" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.7075606">
           <folding />
         </state>
       </provider>
