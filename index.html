@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/index.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="scripts/lib/jquery.js"></script>
+        <script type="text/javascript" src="scripts/lib/rdio.js"></script>
+        <!--<script data-main="scripts/app.js" src="scripts/lib/require.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+//                $('#api').bind('ready.rdio', function() {
+//                    $(this).rdio().play('a171827');
+//                });
+//                $('#api').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
+//                    if (playingTrack) {
+//                        duration = playingTrack.duration;
+//                        $('#art').attr('src', playingTrack.icon);
+//                        $('#track').text(playingTrack.name);
+//                        $('#album').text(playingTrack.album);
+//                        $('#artist').text(playingTrack.artist);
+//                    }
+//                });
+//                $('#api').bind('positionChanged.rdio', function(e, position) {
+//                    $('#position').css('width', Math.floor(100*position/duration)+'%');
+//                });
+//                $('#api').bind('playStateChanged.rdio', function(e, playState) {
+//                    if (playState == 0) { // paused
+//                        $('#play').show();
+//                        $('#pause').hide();
+//                    } else {
+//                        $('#play').hide();
+//                        $('#pause').show();
+//                    }
+//                });
+                console.debug("LOAD");
+                // this is a valid playback token for localhost.
+                // but you should go get your own for your own domain.
+                $('#api').rdio('GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=');
+                $('#api').rdio().play('a171827');
+//                $('#previous').click(function() { $('#api').rdio().previous(); });
+//                $('#play').click(function() { $('#api').rdio().play(); });
+//                $('#pause').click(function() { $('#api').rdio().pause(); });
+//                $('#next').click(function() { $('#api').rdio().next(); });
+            });
+        </script>
+    </head>
+
+    <body>
+        Name: <input type="text" id="artist-name" /><br/><br/>
+
+        Id:<br/>
+        <div id="id-list">
+
+        </div>
+        <br/><br/>
+
+
+        <input type="button" id="biographies" value="Biographies" /><br/>
+        <input type="button" id="images" value="Images" /><br/>
+        <br/><br/>
+
+        <input type="button" id="rdio-play" value="rdio play" /><br/>
+        <br/><br/>
+
+        <div id="output">
+
+        </div>
+        <div id="rdio-output">
+
+        </div>
+
+        <!--<div id="rdio-swf">-->
+            <!--<div>-->
+                <!--<object id="rdio-player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="120">-->
+                    <!--<param name="movie" value="http://www.rdio.com/api/swf/" />-->
+                    <!--&lt;!&ndash;[if !IE]>&ndash;&gt;-->
+                    <!--<object type="application/x-shockwave-flash" data="http://www.rdio.com/api/swf/" width="300" height="120">-->
+                        <!--&lt;!&ndash;<![endif]&ndash;&gt;-->
+                        <!--<div>-->
+                            <!--<h1>Alternative content</h1>-->
+                            <!--<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;[if !IE]>&ndash;&gt;-->
+                    <!--</object>-->
+                    <!--&lt;!&ndash;<![endif]&ndash;&gt;-->
+                <!--</object>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+
+
+        <div id="rdio">
+            <!--<object width="1" height="1" type="application/x-shockwave-flash" data="http://www.rdio.com/api/swf/" id="rdio_swf_279" style="visibility: visible;">-->
+                <!--<param name="allowScriptAccess" value="always">-->
+                <!--<param name="flashvars" value="playbackToken=GAtPWC_S_____3E2OHhkZnNmNDQ1bTc1ZTVreWo5YjNxZWV4dHJlbXIuY29tlDFC1de55uBVc-UnoxxtZA==&amp;domain=extremr.com&amp;listener=rdio_swf_279_cb">-->
+            <!--</object>-->
+        </div>
+    </body>
+</html>
