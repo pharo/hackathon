@@ -1,5 +1,6 @@
 define(["lib/jquery", "lib/underscore"], function($, _) {
     var Echonest = function() {
+        this.tempo = null;
         this.artist_id = null;
         this.song_id = null;
         this.artist_name = $("#artist-name").val();
@@ -87,11 +88,16 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         search: function() {
             if (this.on) {
                 $.ajax({
-                    url: "http://developer.echonest.com/api/v4/song/search",
+                    url: "http://developer.echonest.com/api/v4/song/search?bucket=id:rdio-US&bucket=tracks",
                     data: $.extend(this.getSearchData(), {
                         api_key: "YXXK8FOBOLXWV5PWF",
                         format: "json",
-                        sort: "danceability-desc"
+//                        bucket: "tracks,id:" + this.song_id
+//                        bucket: ["id:7digital-US"],
+//                        bucket: "tracks"//id:7digital-US"//&bucket=audio_summary&bucket=tracks
+
+//                        min_tempo: this.tempo - 2,
+//                        max_tempo: this.tempo + 2
                     }),
                     success: $.proxy(this.searchResults, this),
                     error: $.proxy(this.outputError, this)
@@ -109,6 +115,10 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         },
 
         play: function(result) {
+
+            console.debug("track id: " + result.tracks[0].id);
+
+
             $("#output").html("SUCCESS<br/>" +
                 "Artist: " + result.artist_name + "<br/>" +
                 "Song ID: " + result.id + "<br/>" +
@@ -130,6 +140,8 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         },
 
         setSongData: function(data) {
+            this.tempo = data.response.songs[0].audio_summary.tempo;
+
             knobs["loudness"].setValue(data.response.songs[0].audio_summary.loudness + 100);
             knobs["danceability"].setValue(data.response.songs[0].audio_summary.danceability * 1000);
             knobs["energy"].setValue(data.response.songs[0].audio_summary.energy * 1000);

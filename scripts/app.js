@@ -22,12 +22,7 @@ define([], function() {
     requirejs(["lib/swfobject", 'echonest', 'rdioapi', 'knob'],
         function (swfobject, Echonest, Rdio, Knob) {
             var echonest = new Echonest();
-
-
             $("#artist-name").on("change", $.proxy(echonest.saveName, echonest));
-//            $("#songs").on("click", $.proxy(echonest.songs, songs));
-//            $("#biographies").on("click", $.proxy(echonest.biographies, echonest));
-//            $("#images").on("click", $.proxy(echonest.images, echonest));
 
             //set up the knobs
             $("#interface").find(".knob").each(function() {
