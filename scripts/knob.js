@@ -1,8 +1,13 @@
 define(["lib/jquery", "lib/underscore"], function($, _) {
     var Knob = function(echonest, dom_element, attr) {
-        this.scale = 20;
+        this.scale = 50;
+        this.max = 1000;
 
-        this.music_value = null;
+//        if (attr == "loudness") {
+//            this.max = 200;
+//        }
+
+        this.music_value = 0;
 
         this.include = false;
         this.echonest = echonest;
@@ -21,15 +26,15 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
             var _this = this;
             this.knob_value.val("");
-            this.music_value = parseInt(this.knob_value.val(), 10);
-            this.knob_value.on("change", function() {
-                if ($(this).val() != "") {
-                    _this.music_value = parseInt($(this).val(), 10);
-                } else {
-                    _this.music_value = null;
-                }
-                _this.update(true);
-            });
+            //this.music_value = parseInt(this.knob_value.val(), 10);
+//            this.knob_value.on("change", function() {
+//                if ($(this).val() != "") {
+//                    _this.music_value = parseInt($(this).val(), 10);
+//                } else {
+//                    _this.music_value = 0;
+//                }
+//                _this.update();
+//            });
             this.knob_include.on("click", function() {
                 _this.include = !_this.include;
                 if (_this.include) {
@@ -37,32 +42,33 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
                 } else  {
                     $(this).html("X");
                 }
-                _this.update();
+                _this.update(true);
             });
             this.knob_down.on("click", function() {
-                _this.music_value = _this.music_value - (1000 / _this.scale);
+                _this.music_value = _this.music_value - (_this.max / _this.scale);
                 _this.update();
             });
             this.knob_up.on("click", function() {
-                _this.music_value = _this.music_value + (1000 / _this.scale);
+                _this.music_value = _this.music_value + (_this.max / _this.scale);
                 _this.update();
             });
             this.knob_track.on("click", ".track-percent", function() {
-                _this.music_value = (1000 * ($(this).parent().find(".track-percent").index(this) / _this.scale));
+                _this.music_value = (_this.max * ($(this).parent().find(".track-percent").index(this) / _this.scale));
                 _this.update();
             });
 
         },
 
+        setValue: function(new_value) {
+            this.music_value = new_value;
+            this.update();
+        },
+
         update: function(force) {
-            if (this.music_value === null) {
-                this.knob_value.val("");
-            } else {
-                this.knob_value.val(this.music_value || "");
-            }
+            this.knob_value.val(this.music_value);
 
             //set lights
-            var light_to = this.music_value / (1000 / this.scale);
+            var light_to = this.music_value / (this.max / this.scale);
             this.knob_track.find(".track-percent").each(function(i) {
                 if (i <= light_to) {
                     $(this).addClass("on");
@@ -71,8 +77,8 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
                 }
             });
 
+            this.echonest.setSearch(this.music_attr, (this.include) ? this.music_value : null, this.max);
             if (this.include || force) {
-                this.echonest.setSearch(this.music_attr, (this.include) ? this.music_value : null);
                 this.echonest.search();
             }
         }
