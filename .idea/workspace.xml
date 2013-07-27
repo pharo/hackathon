@@ -29,22 +29,22 @@
     <favorites_list name="Echonest" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5215208">
+    <splitter split-orientation="horizontal" split-proportion="0.5143472">
       <split-first>
         <leaf>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="3" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
+                <state line="21" column="18" selection-start="522" selection-end="522" vertical-scroll-proportion="0.47124824">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="23" column="21" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.3710145">
+                <state line="22" column="18" selection-start="602" selection-end="602" vertical-scroll-proportion="-12.16">
                   <folding />
                 </state>
               </provider>
@@ -62,7 +62,7 @@
           <file leaf-file-name="rdioapi.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scripts/rdioapi.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="0" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+                <state line="71" column="16" selection-start="55" selection-end="2154" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -102,7 +102,7 @@
           <file leaf-file-name="example.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/Downloads/jquery.rdio.js-master/example/example.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="31" column="9" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.27826086">
+                <state line="31" column="9" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.27906978">
                   <folding />
                 </state>
               </provider>
@@ -140,9 +140,9 @@
         <option value="$PROJECT_DIR$/scripts/rdio.js" />
         <option value="$PROJECT_DIR$/scripts/lib/rdio.min.js" />
         <option value="$PROJECT_DIR$/scripts/rdioapi.js" />
-        <option value="$PROJECT_DIR$/scripts/app.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/lib/rdio.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/app.js" />
       </list>
     </option>
   </component>
@@ -443,30 +443,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="3" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/jquery.rdio.js-master/jquery.rdio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="22" selection-start="0" selection-end="29880" vertical-scroll-proportion="-5.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/rdioapi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/lib/rdio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="651" column="7" selection-start="30475" selection-end="30475" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -480,14 +459,35 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/jquery.rdio.js-master/example/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="9" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.27826086">
+        <state line="31" column="9" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.27906978">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lib/rdio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="651" column="7" selection-start="30475" selection-end="30475" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/rdioapi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="16" selection-start="55" selection-end="2154" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="21" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.3710145">
+        <state line="22" column="18" selection-start="602" selection-end="602" vertical-scroll-proportion="-12.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="18" selection-start="522" selection-end="522" vertical-scroll-proportion="0.47124824">
           <folding />
         </state>
       </provider>
