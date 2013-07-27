@@ -1,4 +1,4 @@
-define(["lib/jquery", "lib/underscore"], function($, _) {
+define(["lib/jquery"], function($) {
     var Echonest = function() {
         this.tempo = null;
         this.artist_id = null;
@@ -91,13 +91,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
                     url: "http://developer.echonest.com/api/v4/song/search?bucket=id:rdio-US&bucket=tracks",
                     data: $.extend(this.getSearchData(), {
                         api_key: "YXXK8FOBOLXWV5PWF",
-                        format: "json",
-//                        bucket: "tracks,id:" + this.song_id
-//                        bucket: ["id:7digital-US"],
-//                        bucket: "tracks"//id:7digital-US"//&bucket=audio_summary&bucket=tracks
-
-//                        min_tempo: this.tempo - 2,
-//                        max_tempo: this.tempo + 2
+                        format: "json"
                     }),
                     success: $.proxy(this.searchResults, this),
                     error: $.proxy(this.outputError, this)
@@ -108,17 +102,15 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         searchResults: function(data) {
             if (data.response && data.response.songs.length) {
                 //pick a random song
-                this.play(data.response.songs[Math.floor((Math.random()*data.response.songs.length))]);
+                var result = data.response.songs[Math.floor((Math.random()*data.response.songs.length))];
+                this.playTrack(result.tracks[0].foreign_id.split("track:")[1]);
+                this.play(result);
             } else {
                 $("#output").html("NO MATCH");
             }
         },
 
         play: function(result) {
-
-            console.debug("track id: " + result.tracks[0].id);
-
-
             $("#output").html("SUCCESS<br/>" +
                 "Artist: " + result.artist_name + "<br/>" +
                 "Song ID: " + result.id + "<br/>" +
@@ -127,7 +119,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
         getSongData: function() {
             $.ajax({
-                url: "http://developer.echonest.com/api/v4/song/profile",
+                url: "http://developer.echonest.com/api/v4/song/profile?bucket=id:rdio-US&bucket=tracks",
                 data: {
                     api_key: "YXXK8FOBOLXWV5PWF",
                     format: "json",
@@ -140,6 +132,7 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
         },
 
         setSongData: function(data) {
+            this.playTrack(data.response.songs[0].tracks[0].foreign_id.split("track:")[1]);
             this.tempo = data.response.songs[0].audio_summary.tempo;
 
             knobs["loudness"].setValue(data.response.songs[0].audio_summary.loudness + 100);
@@ -172,6 +165,10 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
             }
 
             $("#id-list").html(suggestion_html);
+        },
+
+        playTrack: function(track_id) {
+            console.debug(track_id);
         },
 
         songs: function() {
