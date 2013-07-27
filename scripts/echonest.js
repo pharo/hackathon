@@ -166,9 +166,10 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
         suggestArtists: function(data) {
             var suggestion_html = "";
-            _.each(data.response.artists, function(artist) {
+            for (var i = 0, iEnd = data.response.artists.length; i < iEnd; i++) {
+                var artist = data.response.artists[i];
                 suggestion_html += "<a href='#' class='suggest_artist' rel='" + artist.id + "'>" + artist.name + "</a><br/>";
-            });
+            }
 
             $("#id-list").html(suggestion_html);
         },
@@ -193,9 +194,10 @@ define(["lib/jquery", "lib/underscore"], function($, _) {
 
         showSongs: function(data) {
             var suggestion_html = "";
-            _.each(data.response.songs, function(song) {
+            for (var i = 0, iEnd = data.response.songs.length; i < iEnd; i++) {
+                var song = data.response.songs[i];
                 suggestion_html += "<a href='#' class='suggest_song' rel='" + song.id + "'>" + song.title + "</a><br/>";
-            });
+            }
 
             $("#song-id-list").html(suggestion_html);
         }
