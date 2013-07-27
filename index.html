@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/index.css" rel="stylesheet" type="text/css" />
+        <title>KNOBS</title>
+        <link href="css.css" rel="stylesheet" type="text/css" />
+        <!-- jpharo -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+        <script src="index.js"></script>
+
+        <!-- bateman -->
         <script data-main="scripts/app.js" src="scripts/lib/require.js"></script>
+
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
-        <div>
-            Name: <input type="text" id="artist-name" /><br/><br/>
-
-            Artist:<br/>
-            <div id="id-list" class="list">
-
-            </div>
-
-            Song:<br/>
-            <div id="song-id-list" class="list">
-
-            </div>
-            <br/><br/>
+      <div class="body-wrapper">
+        <h1>KNOBS</h1>
+         <div>
+            <input type="text" id="artist-name" placeholder="First, search for an artist"/><br/><br/>
         </div>
 
 
-        <div id="output">
 
+      <div class="container">
+        <div id="apiswf"></div>
+
+        <!-- TRACK INFO -->
+        <div class="track-container">
+          <span id="artist"></span>
+          <span id="track"></span>
+
+            <span id="position"><span>
+            <span class="secs">&nbsp; secs</span>
         </div>
-        <div id="rdio-output">
 
-        </div>
 
-        <div id="interface">
+          <!-- KNOBS!!!! -->
+          <div id="interface">
             <div class="knob" data-attribute="loudness">
-                <span id="loudness-include" class="include">O</span>
+                <span id="loudness-include" class="include">X</span>
                 <input type="hidden" id="weee" value="" />
 
                 <div class="track">
@@ -96,7 +104,7 @@
             </div>
 
             <div class="knob" data-attribute="danceability">
-                <span id="danceability-include" class="include">O</span>
+                <span id="danceability-include" class="include">X</span>
                 <input type="hidden" id="danceability" value="" />
 
                 <div class="track">
@@ -161,7 +169,7 @@
             </div>
 
             <div class="knob" data-attribute="energy">
-                <span id="energy-include" class="include">O</span>
+                <span id="energy-include" class="include">X</span>
                 <input type="hidden" id="energy" value="" />
 
                 <div class="track">
@@ -226,7 +234,7 @@
             </div>
 
             <div class="knob" data-attribute="liveness">
-                <span id="liveness-include" class="include">O</span>
+                <span id="liveness-include" class="include">X</span>
                 <input type="hidden" id="liveness" value="" />
 
                 <div class="track">
@@ -291,7 +299,7 @@
             </div>
 
             <div class="knob" data-attribute="speechiness">
-                <span id="speechiness-include" class="include">O</span>
+                <span id="speechiness-include" class="include">X</span>
                 <input type="hidden" id="speechiness" value="" />
 
                 <div class="track">
@@ -356,7 +364,7 @@
             </div>
 
             <div class="knob" data-attribute="acousticness">
-                <span id="acousticness-include" class="include">O</span>
+                <span id="acousticness-include" class="include">X</span>
                 <input type="hidden" id="acousticness" value="" />
 
                 <div class="track">
@@ -421,10 +429,16 @@
             </div>
 
             <br/><br/>
-        </div>
-        <br/><br/>
+          </div>
 
-        <input type="button" id="rdio-start" value="Start" /><br/>
-        <br/><br/>
+      </div>
+
+      <input id="play_key" value="t2366171" type="hidden">
+        <!--
+        <button id="play">Play</button>
+        <br>
+        <button id="stop">Stop</button>
+        <button id="pause">Pause</button> -->
+     </div>   
     </body>
 </html>
