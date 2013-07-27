@@ -17,22 +17,16 @@ define([], function() {
     });
 
     //App logic
-    requirejs(["lib/swfobject", 'echonest', 'rdioapi'],
-        function (swfobject, Echonest, Rdio) {
+    requirejs(["lib/swfobject", 'echonest', 'rdioapi', 'knob'],
+        function (swfobject, Echonest, Rdio, Knob) {
             var echonest = new Echonest();
-            $("#artist-name").on("keyup", $.proxy(echonest.saveName, echonest));
-            $("#biographies").on("click", $.proxy(echonest.biographies, echonest));
-            $("#images").on("click", $.proxy(echonest.images, echonest));
-//
-//
-//
-////            swfobject.registerObject("rdio-player", "9.0.0", "assets/expressInstall.swf");
-////            console.debug(swfobject);
-//
-//
-//            console.debug("MAKE RDIO");
-//            var rdio = new Rdio();
-//
-////            console.debug(rdio);
+//            $("#artist-name").on("keyup", $.proxy(echonest.saveName, echonest));
+//            $("#biographies").on("click", $.proxy(echonest.biographies, echonest));
+//            $("#images").on("click", $.proxy(echonest.images, echonest));
+
+            //set up the knobs
+            $("#interface").find(".knob").each(function() {
+                new Knob(echonest, $(this), $(this).data("attribute"));
+            });
         });
 });

@@ -19,7 +19,57 @@
         <input type="button" id="images" value="Images" /><br/>
         <br/><br/>
 
-        <input type="button" id="rdio-play" value="rdio play" /><br/>
+        <div id="interface">
+            <div class="knob" data-attribute="loudness">
+                <span id="loudness-include">X</span>
+                <span class="label">Loudness</span>
+                <input type="text" id="loudness" value="" />
+                <input type="button" value="-" id="loudness-down" />
+                <input type="button" value="+" id="loudness-up" />
+            </div>
+
+            <div class="knob" data-attribute="danceability">
+                <span id="danceability-include">X</span>
+                <span class="label">Danceability</span>
+                <input type="text" id="danceability" value="500" />
+                <input type="button" value="-" id="danceability-down" />
+                <input type="button" value="+" id="danceability-up" />
+            </div>
+
+            <div class="knob" data-attribute="energy">
+                <span id="energy-include">X</span>
+                <span class="label">Energy</span>
+                <input type="text" id="energy" value="" />
+                <input type="button" value="-" id="energy-down" />
+                <input type="button" value="+" id="energy-up" />
+            </div>
+
+            <div class="knob" data-attribute="liveness">
+                <span id="liveness-include">X</span>
+                <span class="label">Liveness</span>
+                <input type="text" id="liveness" value="" />
+                <input type="button" value="-" id="liveness-down" />
+                <input type="button" value="+" id="liveness-up" />
+            </div>
+
+            <div class="knob" data-attribute="speechiness">
+                <span id="speechiness-include">X</span>
+                <span class="label">Speechiness</span>
+                <input type="text" id="speechiness" value="" />
+                <input type="button" value="-" id="speechiness-down" />
+                <input type="button" value="+" id="speechiness-up" />
+            </div>
+
+            <div class="knob" data-attribute="acousticness">
+                <span id="acousticness-include">X</span>
+                <span class="label">Acousticness</span>
+                <input type="text" id="acousticness" value="" />
+                <input type="button" value="-" id="acousticness-down" />
+                <input type="button" value="+" id="acousticness-up" />
+            </div>
+        </div>
+
+        <input type="button" id="rdio-start" value="Start" /><br/>
         <br/><br/>
 
         <div id="output">
